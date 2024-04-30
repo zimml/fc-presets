@@ -1,0 +1,151 @@
+# 
+
+# diff all
+
+# version
+# Betaflight / STM32F7X2 (S7X2) 4.3.1 Jul 13 2022 / 03:27:52 (8d4f00532) MSP API: 1.44
+
+# config: YES
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name GEPRC_F722_AIO
+manufacturer_id GEPR
+mcu_id 005000283532510735393430
+signature 
+
+# name: Cinebot30
+
+# resources
+resource MOTOR 1 C07
+resource MOTOR 2 C06
+resource MOTOR 3 C09
+resource MOTOR 4 C08
+resource LED_STRIP 1 NONE
+resource PINIO 2 A01
+
+# feature
+feature -SOFTSERIAL
+feature -RX_PARALLEL_PWM
+feature RX_MSP
+feature OSD
+
+# serial
+serial 0 1 115200 57600 0 115200
+serial 3 0 115200 57600 0 115200
+serial 4 0 115200 57600 0 115200
+
+# beacon
+beacon RX_LOST
+beacon RX_SET
+
+# aux
+aux 0 0 0 900 1300 0 0
+aux 1 1 1 1300 1700 0 0
+aux 2 2 1 1700 2100 0 0
+aux 3 13 2 1700 2100 0 0
+aux 4 40 3 1700 2100 0 0
+
+# adjrange
+adjrange 0 0 3 900 2100 29 3 0 0
+
+# vtxtable
+vtxtable bands 6
+vtxtable channels 8
+vtxtable band 1 BOSCAM_A A CUSTOM  5865 5845 5825 5805 5785 5765 5745 5725
+vtxtable band 2 BOSCAM_B B CUSTOM  5733 5752 5771 5790 5809 5828 5847 5866
+vtxtable band 3 BOSCAM_E E CUSTOM  5705 5685 5665 5645 5885 5905 5925 5945
+vtxtable band 4 FATSHARK F CUSTOM  5740 5760 5780 5800 5820 5840 5860 5880
+vtxtable band 5 RACEBAND R CUSTOM  5658 5695 5732 5769 5806 5843 5880 5917
+vtxtable band 6 BAND_D   D CUSTOM  5362 5399 5436 5473 5510 5547 5584 5621
+vtxtable powerlevels 5
+vtxtable powervalues 25 100 200 400 600
+vtxtable powerlabels 25 100 200 400 600
+
+# master
+set gyro_lpf1_static_hz = 0
+set dyn_notch_count = 1
+set dyn_notch_q = 600
+set acc_calibration = -61,0,-7,1
+set baro_hardware = NONE
+set blackbox_sample_rate = 1/8
+set dshot_bidir = ON
+set align_board_roll = 180
+set align_board_yaw = 0
+set vbat_max_cell_voltage = 435
+set beeper_dshot_beacon_tone = 3
+set yaw_motors_reversed = ON
+set small_angle = 180
+set osd_tim_2_pos = 405
+set osd_flymode_pos = 14937
+set osd_throttle_pos = 245
+set osd_vtx_channel_pos = 373
+set osd_current_pos = 14913
+set osd_mah_drawn_pos = 14945
+set osd_craft_name_pos = 393
+set osd_gps_speed_pos = 15728
+set osd_gps_lon_pos = 8193
+set osd_gps_lat_pos = 8225
+set osd_gps_sats_pos = 15760
+set osd_home_dir_pos = 14874
+set osd_home_dist_pos = 14968
+set osd_flight_dist_pos = 9520
+set osd_altitude_pos = 32080
+set osd_power_pos = 388
+set osd_warnings_pos = 14902
+set osd_avg_cell_voltage_pos = 14881
+set osd_disarmed_pos = 14848
+set osd_displayport_device = MSP
+set debug_mode = GYRO_SCALED
+set vcd_video_system = HD
+set pinio_config = 129,1,1,1
+set pinio_box = 39,40,41,42
+set craft_name = Cinebot30
+
+profile 0
+
+profile 1
+
+# profile 1
+set vbat_sag_compensation = 100
+set p_pitch = 58
+set i_pitch = 105
+set p_roll = 56
+set i_roll = 100
+set p_yaw = 56
+set i_yaw = 100
+#set angle_level_strength = 80
+set d_min_roll = 39
+set d_min_pitch = 44
+set thrust_linear = 20
+set feedforward_smooth_factor = 60
+set feedforward_jitter_factor = 12
+set simplified_d_gain = 130
+set simplified_pi_gain = 125
+set simplified_dmax_gain = 15
+
+profile 2
+
+profile 3
+
+# restore original profile selection
+profile 1
+
+rateprofile 0
+
+rateprofile 1
+
+rateprofile 2
+
+rateprofile 3
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration
+save
+# 
